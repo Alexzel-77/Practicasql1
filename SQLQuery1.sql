@@ -45,5 +45,18 @@ Create Table TProyecto(
 nProyectoID int identity(1,1) primary key,
 cNombreProyecto varchar(100) not null,
 dFechaInicio date not null,
-dFechaFin date not null);
+dFechaFin date null);
+go
+
+create table TEmpleadoProyecto(
+nEmpleadoID int,
+nProyectoID int,
+
+primary key(nEmpleadoID, nProyectoID),
+foreign key(nEmpleadoID)
+References TEmpleado(nEmpleadoID),
+
+foreign key(nProyectoID)
+References TProyecto(nProyectoID)
+);
 go
