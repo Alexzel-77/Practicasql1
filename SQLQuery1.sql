@@ -125,3 +125,58 @@ CREATE TABLE TSucursal(
     cCiudad VARCHAR(100) NOT NULL
 );
 GO
+
+INSERT INTO TDepartamento(cNombreDepartamento)
+VALUES
+('Recursos Humanos'),
+('Finanzas'),
+('Ventas'),
+('Marketing'),
+('Tecnologia');
+GO
+
+INSERT INTO TCargo(cNombreCargo)
+VALUES
+('Gerente'),
+('Analista'),
+('Programador'),
+('Contador'),
+('Vendedor');
+GO
+
+INSERT INTO TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,nEdad,cGenero)
+VALUES
+('EMP001','Juan','Perez',1,1,1500,35,'M'),
+('EMP002','Maria','Gomez',2,2,1200,28,'F'),
+('EMP003','Carlos','Lopez',3,5,900,30,'M'),
+('EMP004','Ana','Ruiz',4,2,1100,27,'F'),
+('EMP005','Pedro','Garcia',5,3,1800,32,'M'),
+('EMP006','Laura','Mendez',1,2,1000,26,'F'),
+('EMP007','Jose','Gonzalez',2,4,1300,45,'M'),
+('EMP008','Sofia','Torres',3,5,950,29,'F'),
+('EMP009','Miguel','Castro',4,2,1050,38,'M'),
+('EMP010','Elena','Rojas',5,3,2000,31,'F');
+GO
+
+INSERT INTO TProyecto
+(cNombreProyecto,dFechaInicio,dFechaFinalizacion)
+VALUES
+('Sistema ERP','2025-01-01','2025-12-31'),
+('App Movil','2025-02-01','2025-10-30'),
+('Portal Web','2025-03-01','2025-09-30');
+GOINSERT INTO TProyecto(cNombreProyecto,dFechaInicio,dFechaFin)
+
+INSERT INTO TEmpleadoProyecto
+VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,2),
+(5,2),
+(6,3),
+(7,3),
+(8,2),
+(9,1),
+(10,3);
+GO
