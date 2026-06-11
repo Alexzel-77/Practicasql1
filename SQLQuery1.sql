@@ -250,3 +250,30 @@ AND NOT EXISTS(
     WHERE nDepartamentoID=5
 );
 GO
+
+
+SELECT *
+FROM TEmpleado
+ORDER BY cApellido;
+GO
+
+
+SELECT *
+FROM TEmpleado
+WHERE nSalario > 1000;
+GO
+
+
+SELECT *
+FROM TEmpleado
+WHERE bActivo = 1;
+GO
+
+
+SELECT E.cNombre,
+       E.cApellido,
+       D.cNombreDepartamento
+FROM TEmpleado E
+INNER JOIN TDepartamento D
+ON E.nDepartamentoID = D.nDepartamentoID;
+GO
