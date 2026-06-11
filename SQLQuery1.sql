@@ -277,3 +277,27 @@ FROM TEmpleado E
 INNER JOIN TDepartamento D
 ON E.nDepartamentoID = D.nDepartamentoID;
 GO
+
+
+SELECT D.cNombreDepartamento,
+       COUNT(*) AS TotalEmpleados
+FROM TEmpleado E
+INNER JOIN TDepartamento D
+ON E.nDepartamentoID = D.nDepartamentoID
+GROUP BY D.cNombreDepartamento;
+GO
+
+
+SELECT D.cNombreDepartamento,
+       AVG(E.nSalario) AS PromedioSalario
+FROM TEmpleado E
+INNER JOIN TDepartamento D
+ON E.nDepartamentoID = D.nDepartamentoID
+GROUP BY D.cNombreDepartamento;
+GO
+
+
+SELECT TOP 3 *
+FROM TEmpleado
+ORDER BY nSalario DESC;
+GO
