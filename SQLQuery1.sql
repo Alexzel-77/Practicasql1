@@ -180,3 +180,48 @@ VALUES
 (9,1),
 (10,3);
 GO
+
+
+UPDATE TEmpleado
+SET nSalario = nSalario * 1.10;
+GO
+
+
+UPDATE TEmpleado
+SET nSalario = nSalario * 1.20
+WHERE nDepartamentoID = 1;
+GO
+
+
+UPDATE TEmpleado
+SET cEmail='juan@empresa.com'
+WHERE nEmpleadoID=1;
+GO
+
+
+UPDATE TEmpleado
+SET nCargoID=3
+WHERE nEmpleadoID=2;
+GO
+
+UPDATE TEmpleado
+SET nDepartamentoID=5
+WHERE nEmpleadoID IN (3,4);
+GO
+
+
+UPDATE TEmpleado
+SET bActivo=0
+WHERE nSalario<500;
+GO
+
+-- 47
+UPDATE TProyecto
+SET dFechaFinalizacion='2026-12-31'
+WHERE nProyectoID=1;
+GO
+
+
+INSERT INTO TEmpleadoProyecto
+VALUES(1,2);
+GO
