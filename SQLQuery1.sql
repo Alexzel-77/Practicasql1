@@ -60,3 +60,68 @@ foreign key(nProyectoID)
 References TProyecto(nProyectoID)
 );
 go
+
+ALTER TABLE TEmpleado
+ADD cEmail VARCHAR(100);
+GO
+
+ALTER TABLE TEmpleado
+ADD cTelefono VARCHAR(15);
+GO
+
+ALTER TABLE TEmpleado
+ALTER COLUMN cNombre VARCHAR(100);
+GO
+
+ALTER TABLE TEmpleado
+ALTER COLUMN cApellido VARCHAR(100);
+GO
+
+ALTER TABLE TEmpleado
+ADD cDireccion VARCHAR(200);
+GO
+
+ALTER TABLE TEmpleado
+ADD nEdad INT;
+GO
+
+ALTER TABLE TEmpleado
+ADD CONSTRAINT CK_Edad
+CHECK(nEdad BETWEEN 18 AND 65);
+GO
+
+ALTER TABLE TEmpleado
+ADD CONSTRAINT UQ_Email UNIQUE(cEmail);
+GO
+
+ALTER TABLE TEmpleado
+ADD bActivo BIT DEFAULT 1;
+GO
+
+ALTER TABLE TEmpleado
+DROP COLUMN cDireccion;
+GO
+
+ALTER TABLE TEmpleado
+ALTER COLUMN cTelefono VARCHAR(20);
+GO
+
+ALTER TABLE TEmpleado
+ADD cGenero CHAR(1);
+GO
+
+ALTER TABLE TEmpleado
+ADD CONSTRAINT CK_Genero
+CHECK(cGenero IN ('M','F'));
+GO
+
+ALTER TABLE TEmpleado
+ADD dFechaNacimiento DATE;
+GO
+
+CREATE TABLE TSucursal(
+    nSucursalID INT IDENTITY(1,1) PRIMARY KEY,
+    cNombreSucursal VARCHAR(100) NOT NULL,
+    cCiudad VARCHAR(100) NOT NULL
+);
+GO
