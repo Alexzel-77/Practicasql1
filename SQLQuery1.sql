@@ -301,3 +301,45 @@ SELECT TOP 3 *
 FROM TEmpleado
 ORDER BY nSalario DESC;
 GO
+
+ALTER TABLE TEmpleado
+DROP CONSTRAINT CK_Edad;
+GO
+
+ALTER TABLE TEmpleado
+DROP CONSTRAINT UQ_Email;
+GO
+
+ALTER TABLE TEmpleado
+ADD CONSTRAINT CK_Edad
+CHECK(nEdad BETWEEN 18 AND 65);
+GO
+
+ALTER TABLE TEmpleado
+ADD CONSTRAINT UQ_Email
+UNIQUE(cEmail);
+GO
+
+DROP TABLE TEmpleadoProyecto;
+GO
+
+DROP TABLE TProyecto;
+GO
+
+DROP TABLE TEmpleado;
+GO
+
+DROP TABLE TCargo;
+GO
+
+DROP TABLE TDepartamento;
+GO
+
+DROP TABLE TSucursal;
+GO
+
+USE master;
+GO
+
+DROP DATABASE EmpresaSQL;
+GO
