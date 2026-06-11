@@ -225,3 +225,28 @@ GO
 INSERT INTO TEmpleadoProyecto
 VALUES(1,2);
 GO
+
+DELETE FROM TEmpleado
+WHERE cNIF='EMP010';
+GO
+
+DELETE FROM TEmpleado
+WHERE bActivo=0;
+GO
+
+DELETE FROM TProyecto
+WHERE nProyectoID=3;
+GO
+
+DELETE FROM TEmpleadoProyecto
+WHERE nEmpleadoID=1;
+GO
+
+DELETE FROM TDepartamento
+WHERE nDepartamentoID=5
+AND NOT EXISTS(
+    SELECT 1
+    FROM TEmpleado
+    WHERE nDepartamentoID=5
+);
+GO
